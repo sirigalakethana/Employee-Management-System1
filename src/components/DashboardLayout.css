@@ -1,0 +1,443 @@
+/* =========================================
+   GLOBAL DASHBOARD STYLES
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f4f7fc;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  color: #1e293b;
+}
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar {
+  width: 260px;
+  background: #172554;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  overflow-y: auto;
+  transition: width 0.25s ease;
+}
+
+/* BRAND */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 10px 25px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.brand-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(37,99,235,0.3);
+}
+
+.brand h2 {
+  font-size: 19px;
+  margin: 0 0 4px;
+  font-weight: 700;
+  color: white;
+}
+
+.brand span {
+  font-size: 11px;
+  color: #a5b4fc;
+  letter-spacing: 0.3px;
+}
+
+/* =========================================
+   SIDEBAR NAVIGATION
+========================================= */
+
+.sidebar-menu {
+  flex: 1;
+}
+
+.menu-heading {
+  font-size: 10px;
+  color: #94a3b8;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  margin: 30px 12px 15px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.menu-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 13px 14px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: transparent;
+  color: #cbd5e1;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.menu-item:hover {
+  background: rgba(255,255,255,0.09);
+  color: white;
+  transform: translateX(2px);
+}
+
+.menu-item.active {
+  background: #2563eb;
+  border-color: #3b82f6;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(37,99,235,0.25);
+}
+
+.menu-icon {
+  width: 23px;
+  min-width: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.menu-label {
+  white-space: nowrap;
+}
+
+/* =========================================
+   SIDEBAR USER AND LOGOUT
+========================================= */
+
+.sidebar-bottom {
+  margin-top: auto;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: 18px;
+}
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 8px 9px 15px;
+}
+
+.sidebar-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.sidebar-user-info strong {
+  color: white;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidebar-user-info span {
+  color: #94a3b8;
+  font-size: 10px;
+}
+
+.logout-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: #fca5a5;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.logout-button:hover {
+  background: rgba(239,68,68,0.13);
+  color: #fecaca;
+}
+
+.logout-button span {
+  font-size: 18px;
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.main-content {
+  flex: 1;
+  margin-left: 260px;
+  min-width: 0;
+  min-height: 100vh;
+}
+
+/* =========================================
+   TOP HEADER
+========================================= */
+
+.topbar {
+  min-height: 88px;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 35px;
+  border-bottom: 1px solid #e8edf5;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.topbar-heading h2 {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 700;
+  color: #172554;
+}
+
+.topbar-heading p {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 12px;
+}
+
+/* =========================================
+   USER PROFILE
+========================================= */
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 12px;
+  border: 1px solid #edf0f5;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.user-avatar {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #dbeafe;
+  color: #1d4ed8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.user-profile strong {
+  display: block;
+  color: #1e293b;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.user-profile span {
+  display: block;
+  color: #64748b;
+  font-size: 10px;
+}
+
+/* =========================================
+   PAGE CONTENT
+========================================= */
+
+.page-content {
+  width: 100%;
+  min-width: 0;
+  padding: 30px 35px;
+  animation: pageFade 0.25s ease;
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+button:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 220px;
+  }
+
+  .main-content {
+    margin-left: 220px;
+  }
+
+  .topbar {
+    padding: 15px 22px;
+  }
+
+  .page-content {
+    padding: 24px 22px;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+  .sidebar {
+    width: 68px;
+    padding: 18px 7px;
+  }
+
+  .brand {
+    justify-content: center;
+    padding: 5px 0 22px;
+  }
+
+  .brand-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand-text,
+  .menu-heading,
+  .menu-label,
+  .sidebar-user-info,
+  .logout-button:not(:focus-visible) {
+    display: none;
+  }
+
+  .menu-item {
+    justify-content: center;
+    padding: 13px 4px;
+  }
+
+  .menu-icon {
+    font-size: 19px;
+  }
+
+  .sidebar-user {
+    justify-content: center;
+    padding: 8px 0 15px;
+  }
+
+  .logout-button {
+    justify-content: center;
+    padding: 12px 4px;
+  }
+
+  .main-content {
+    margin-left: 68px;
+  }
+
+  .topbar {
+    min-height: 75px;
+    padding: 12px;
+  }
+
+  .topbar-heading h2 {
+    font-size: 16px;
+  }
+
+  .topbar-heading p {
+    font-size: 10px;
+  }
+
+  .user-profile {
+    padding: 4px;
+    border: none;
+  }
+
+  .user-profile .user-details {
+    display: none;
+  }
+
+  .user-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .page-content {
+    padding: 18px 12px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .sidebar {
+    width: 58px;
+  }
+
+  .main-content {
+    margin-left: 58px;
+  }
+
+  .topbar-heading h2 {
+    font-size: 14px;
+  }
+
+  .page-content {
+    padding: 14px 9px;
+  }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>My Performance | EMS</title><link rel="stylesheet" href="user-dashboard.css"><link rel="stylesheet" href="performance.css"></head><body><div class="dashboard-layout"><aside class="sidebar"><div class="logo-section"><div class="logo">EMS</div><div><h2>Employee Portal</h2><p>Management System</p></div></div><nav class="navigation">
+            <a href="user-dashboard.html" class="nav-item">
+
+                <span class="nav-icon">⌂</span>
+
+                <span>Dashboard</span>
+
+            </a>
+
+            <a href="profile.html" class="nav-item">
+
+                <span class="nav-icon">👤</span>
+
+                <span>My Profile</span>
+
+            </a>
+
+            <a href="attendance.html" class="nav-item">
+
+                <span class="nav-icon">📅</span>
+
+                <span>Attendance</span>
+
+            </a>
+
+            <a href="payslip.html" class="nav-item">
+
+                <span class="nav-icon">₹</span>
+
+                <span>My Payslip</span>
+
+            </a>
+
+            <a href="leave.html" class="nav-item">
+
+                <span class="nav-icon">▣</span>
+
+                <span>Leave</span>
+
+            </a>
+
+            <a href="performance.html" class="nav-item active">
+
+                <span class="nav-icon">★</span>
+
+                <span>My Performance</span>
+
+            </a>
+
+            <a href="skills.html" class="nav-item">
+
+                <span class="nav-icon">◆</span>
+
+                <span>My Skills</span>
+
+            </a>
+
+            <a href="announcements.html" class="nav-item">
+
+                <span class="nav-icon">📢</span>
+
+                <span>Announcements</span>
+
+            </a>
+        </nav><div class="sidebar-bottom"><button class="logout-button" onclick="logout()"><span>↪</span> Logout</button></div></aside><main class="main-content"><header class="top-header"><div><p class="welcome-small">EMPLOYEE PORTAL</p><h1>My Performance</h1></div><div class="profile-area"><div class="profile-avatar" id="profileAvatar">E</div><div><strong id="headerName">Employee</strong><p>Employee</p></div></div></header><section class="content"><div class="welcome-card performance-welcome"><div><span class="welcome-label">PERFORMANCE OVERVIEW</span><h2 id="employeeTitle">My Performance</h2><p>Track your attendance, task completion and teamwork.</p></div><div class="welcome-icon">★</div></div><div class="performance-grid"><div class="score-card"><span>Overall Rating</span><strong id="rating">0.0</strong><small>/ 5</small><div class="stars" id="stars">★★★★★</div></div><div class="metric-card"><div><span>Attendance</span><strong id="attendance">0%</strong></div><div class="progress"><i id="attendanceBar"></i></div></div><div class="metric-card"><div><span>Task Completion</span><strong id="task">0%</strong></div><div class="progress"><i id="taskBar"></i></div></div><div class="metric-card"><div><span>Teamwork</span><strong id="teamwork">0%</strong></div><div class="progress"><i id="teamworkBar"></i></div></div></div><div class="performance-status"><span>Current Performance</span><strong id="status">Good</strong><p id="statusText">Keep maintaining consistent performance across all areas.</p></div></section></main></div><script src="performance.js"></script></body></html>

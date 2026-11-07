@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave | Employee Management System</title>
+    <link rel="stylesheet" href="leave.css">
+</head>
+
+<body>
+
+<aside class="sidebar">
+
+    <div class="sidebar-logo">
+        <div class="logo-box">E</div>
+        <div>
+            <h2>EMS</h2>
+            <span>Employee Portal</span>
+        </div>
+    </div>
+
+    <nav class="sidebar-nav">
+            <a href="user-dashboard.html" class="nav-item">
+
+                <span class="nav-icon">⌂</span>
+
+                <span>Dashboard</span>
+
+            </a>
+
+            <a href="profile.html" class="nav-item">
+
+                <span class="nav-icon">👤</span>
+
+                <span>My Profile</span>
+
+            </a>
+
+            <a href="attendance.html" class="nav-item">
+
+                <span class="nav-icon">📅</span>
+
+                <span>Attendance</span>
+
+            </a>
+
+            <a href="payslip.html" class="nav-item">
+
+                <span class="nav-icon">₹</span>
+
+                <span>My Payslip</span>
+
+            </a>
+
+            <a href="leave.html" class="nav-item active">
+
+                <span class="nav-icon">▣</span>
+
+                <span>Leave</span>
+
+            </a>
+
+            <a href="performance.html" class="nav-item">
+
+                <span class="nav-icon">★</span>
+
+                <span>My Performance</span>
+
+            </a>
+
+            <a href="skills.html" class="nav-item">
+
+                <span class="nav-icon">◆</span>
+
+                <span>My Skills</span>
+
+            </a>
+
+            <a href="announcements.html" class="nav-item">
+
+                <span class="nav-icon">📢</span>
+
+                <span>Announcements</span>
+
+            </a>
+        </nav>
+
+    <div class="sidebar-bottom">
+        <button class="logout-btn" onclick="logout()">
+            <span>↪</span>
+            Logout
+        </button>
+    </div>
+
+</aside>
+
+
+<main class="main-content">
+
+    <header class="top-header">
+
+        <div>
+            <h1>Leave Management</h1>
+            <p>Apply for leave and track your leave requests</p>
+        </div>
+
+        <div class="user-profile">
+            <div class="avatar" id="userAvatar">U</div>
+
+            <div class="user-info">
+                <strong id="userName">Employee</strong>
+                <span>Employee</span>
+            </div>
+        </div>
+
+    </header>
+
+
+    <section class="page-content">
+
+        <div class="intro-card">
+
+            <div>
+                <h2>My Leave</h2>
+                <p>
+                    Submit leave requests and check their approval status.
+                </p>
+            </div>
+
+            <button class="apply-btn" onclick="openLeaveForm()">
+                + Apply Leave
+            </button>
+
+        </div>
+
+
+        <!-- Statistics -->
+
+        <div class="summary-grid">
+
+            <div class="summary-card">
+                <div class="summary-icon">▣</div>
+                <div>
+                    <span>Total Requests</span>
+                    <h2 id="totalRequests">0</h2>
+                </div>
+            </div>
+
+            <div class="summary-card">
+                <div class="summary-icon pending">◷</div>
+                <div>
+                    <span>Pending</span>
+                    <h2 id="pendingRequests">0</h2>
+                </div>
+            </div>
+
+            <div class="summary-card">
+                <div class="summary-icon approved">✓</div>
+                <div>
+                    <span>Approved</span>
+                    <h2 id="approvedRequests">0</h2>
+                </div>
+            </div>
+
+            <div class="summary-card">
+                <div class="summary-icon rejected">×</div>
+                <div>
+                    <span>Rejected</span>
+                    <h2 id="rejectedRequests">0</h2>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Leave Requests -->
+
+        <div class="content-card">
+
+            <div class="card-header">
+                <div>
+                    <h2>My Leave Requests</h2>
+                    <p>View all your submitted leave applications</p>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Leave Type</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Reason</th>
+                            <th>Applied On</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="leaveTableBody"></tbody>
+
+                </table>
+
+                <div id="emptyMessage" class="empty-message">
+
+                    <div class="empty-icon">▣</div>
+
+                    <h3>No Leave Requests</h3>
+
+                    <p>
+                        You have not submitted any leave requests yet.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- Apply Leave Modal -->
+
+<div class="modal-overlay" id="leaveModal">
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <div>
+                <h2>Apply for Leave</h2>
+                <p>Submit a new leave request</p>
+            </div>
+
+            <button class="close-btn" onclick="closeLeaveForm()">
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="leaveForm">
+
+            <div class="form-group">
+
+                <label for="leaveType">
+                    Leave Type
+                </label>
+
+                <select id="leaveType" required>
+
+                    <option value="">
+                        Select Leave Type
+                    </option>
+
+                    <option value="Casual Leave">
+                        Casual Leave
+                    </option>
+
+                    <option value="Sick Leave">
+                        Sick Leave
+                    </option>
+
+                    <option value="Earned Leave">
+                        Earned Leave
+                    </option>
+
+                    <option value="Emergency Leave">
+                        Emergency Leave
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="fromDate">
+                        From Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="fromDate"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="toDate">
+                        To Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="toDate"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="leaveReason">
+                    Reason
+                </label>
+
+                <textarea
+                    id="leaveReason"
+                    rows="4"
+                    placeholder="Enter reason for leave"
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <div id="formMessage" class="form-message"></div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    onclick="closeLeaveForm()"
+                >
+                    Cancel
+                </button>
+
+                <button type="submit" class="submit-btn">
+                    Submit Leave
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="leave.js"></script>
+
+</body>
+</html>

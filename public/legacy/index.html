@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Employee Management System | Login</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div class="login-page">
+
+        <section class="brand-section">
+            <div class="brand-content">
+                <div class="brand-logo">E</div>
+                <h1>Employee<br>Management System</h1>
+                <p class="brand-description">A simple and secure workspace for managing employee information and HR activities.</p>
+            </div>
+        </section>
+
+        <section class="login-section">
+            <div class="login-card">
+
+                
+
+                <div class="login-header">
+                    <p class="welcome-text">Welcome</p>
+                    <h2>Sign in to continue</h2>
+                    <p>Select your role and enter your credentials.</p>
+                </div>
+
+                <div id="roleSelection" class="role-selection">
+                    <div class="role-cards">
+                        <button type="button" class="role-card" data-role="admin">
+                            <div class="role-icon">A</div>
+                            <div>
+                                <strong>Admin</strong>
+                                <span>Access HR management features</span>
+                            </div>
+                        </button>
+
+                        <button type="button" class="role-card" data-role="employee">
+                            <div class="role-icon">E</div>
+                            <div>
+                                <strong>Employee</strong>
+                                <span>Access your employee workspace</span>
+                            </div>
+                        </button>
+                    </div>
+
+                    <button type="button" id="continueRole" class="login-button" disabled>
+                        <span>Continue</span>
+                        <span class="arrow">→</span>
+                    </button>
+                </div>
+
+                <form id="loginForm" class="role-login-form hidden">
+                    <div class="selected-role" id="selectedRoleText"></div>
+
+                    <div class="form-group">
+                        <label for="loginEmail">Email Address</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">✉</span>
+                            <input type="email" id="loginEmail" placeholder="Enter your email" autocomplete="email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">●</span>
+                            <input type="password" id="loginPassword" placeholder="Enter your password" autocomplete="current-password" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="login-button">
+                        <span>Sign In</span>
+                        <span class="arrow">→</span>
+                    </button>
+
+                    <div id="employeeRegisterPrompt" class="register-prompt hidden">
+                        <span>New employee?</span>
+                        <button type="button" id="showRegister">Create Employee Account</button>
+                    </div>
+
+                    <button type="button" id="changeRole" class="change-role-button">← Change Role</button>
+                </form>
+
+
+                <form id="employeeRegisterForm" class="role-login-form hidden">
+                    <div class="selected-role">Create Employee Account</div>
+                    <p class="form-note">If you are not registered yet, create your employee account here. No admin approval is required for this demo.</p>
+
+                    <div class="form-group">
+                        <label for="registerName">Full Name</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">●</span>
+                            <input type="text" id="registerName" placeholder="Enter your full name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registerEmail">Email Address</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">✉</span>
+                            <input type="email" id="registerEmail" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registerPassword">Password</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">●</span>
+                            <input type="password" id="registerPassword" placeholder="Create a password" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registerConfirmPassword">Confirm Password</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">●</span>
+                            <input type="password" id="registerConfirmPassword" placeholder="Confirm your password" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="login-button">
+                        <span>Create Account</span>
+                        <span class="arrow">→</span>
+                    </button>
+
+                    <button type="button" id="backToEmployeeLogin" class="change-role-button">← Back to Employee Login</button>
+                </form>
+
+                <div id="loginMessage" class="message"></div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <script src="./js/auth.js"></script>
+
+</body>
+
+
+</html>

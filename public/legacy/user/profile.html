@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | EMS</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo-section">
+            <div class="logo">EMS</div>
+            <div>
+                <h2>Employee Portal</h2>
+                <p>Management System</p>
+            </div>
+        </div>
+
+        <nav class="navigation">
+            <a href="user-dashboard.html" class="nav-item">
+
+                <span class="nav-icon">⌂</span>
+
+                <span>Dashboard</span>
+
+            </a>
+
+            <a href="profile.html" class="nav-item active">
+
+                <span class="nav-icon">👤</span>
+
+                <span>My Profile</span>
+
+            </a>
+
+            <a href="attendance.html" class="nav-item">
+
+                <span class="nav-icon">📅</span>
+
+                <span>Attendance</span>
+
+            </a>
+
+            <a href="payslip.html" class="nav-item">
+
+                <span class="nav-icon">₹</span>
+
+                <span>My Payslip</span>
+
+            </a>
+
+            <a href="leave.html" class="nav-item">
+
+                <span class="nav-icon">▣</span>
+
+                <span>Leave</span>
+
+            </a>
+
+            <a href="performance.html" class="nav-item">
+
+                <span class="nav-icon">★</span>
+
+                <span>My Performance</span>
+
+            </a>
+
+            <a href="skills.html" class="nav-item">
+
+                <span class="nav-icon">◆</span>
+
+                <span>My Skills</span>
+
+            </a>
+
+            <a href="announcements.html" class="nav-item">
+
+                <span class="nav-icon">📢</span>
+
+                <span>Announcements</span>
+
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button class="logout-button" onclick="logout()">
+                ↪ Logout
+            </button>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <header class="top-header">
+
+            <div>
+                <p class="welcome-small">Employee Portal</p>
+                <h1>My Profile</h1>
+            </div>
+
+            <div class="profile-area">
+                <div class="profile-avatar" id="profileAvatar">E</div>
+
+                <div>
+                    <strong id="headerName">Employee</strong>
+                    <p>Employee</p>
+                </div>
+            </div>
+
+        </header>
+
+
+        <section class="content">
+
+            <!-- PROFILE HEADER -->
+            <div class="profile-banner">
+
+                <div class="large-avatar" id="largeAvatar">
+                    E
+                </div>
+
+                <div>
+                    <h2 id="profileName">Employee</h2>
+                    <p id="profileRole">Employee</p>
+                    <span class="active-badge">Active Account</span>
+                </div>
+
+            </div>
+
+
+            <!-- PROFILE FORM -->
+            <div class="profile-card">
+
+                <div class="card-header">
+                    <div>
+                        <h2>Personal Information</h2>
+                        <p>View and update your account information.</p>
+                    </div>
+                </div>
+
+
+                <form id="profileForm">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="profileFullName">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="profileFullName"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="profileEmail">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="profileEmail"
+                                disabled
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="profileJobRole">
+                                Job Role
+                            </label>
+
+                            <input
+                                type="text"
+                                id="profileJobRole"
+                                disabled
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="profileAccountRole">
+                                Account Type
+                            </label>
+
+                            <input
+                                type="text"
+                                id="profileAccountRole"
+                                value="Employee"
+                                disabled
+                            >
+                        </div>
+
+                    </div>
+
+
+                    <div id="profileMessage" class="message"></div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            type="button"
+                            class="cancel-button"
+                            onclick="window.location.href='user-dashboard.html'"
+                        >
+                            Cancel
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="save-button"
+                        >
+                            Save Changes
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- ACCOUNT DETAILS -->
+            <div class="profile-card account-details">
+
+                <div class="card-header">
+                    <div>
+                        <h2>Account Details</h2>
+                        <p>Information about your EMS account.</p>
+                    </div>
+                </div>
+
+                <div class="details-grid">
+
+                    <div class="detail-item">
+                        <span>Account Status</span>
+                        <strong class="status-text">Active</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>Account Type</span>
+                        <strong>Employee</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>Login Email</span>
+                        <strong id="accountEmail">-</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>Job Role</span>
+                        <strong id="accountJobRole">-</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="profile.js"></script>
+
+</body>
+</html>

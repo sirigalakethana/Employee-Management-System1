@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard | EMS</title>
+    <link rel="stylesheet" href="user-dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo-section">
+            <div class="logo">EMS</div>
+            <div>
+                <h2>Employee Portal</h2>
+                <p>Management System</p>
+            </div>
+        </div>
+
+        <nav class="navigation">
+            <a href="user-dashboard.html" class="nav-item active">
+
+                <span class="nav-icon">⌂</span>
+
+                <span>Dashboard</span>
+
+            </a>
+
+            <a href="profile.html" class="nav-item">
+
+                <span class="nav-icon">👤</span>
+
+                <span>My Profile</span>
+
+            </a>
+
+            <a href="attendance.html" class="nav-item">
+
+                <span class="nav-icon">📅</span>
+
+                <span>Attendance</span>
+
+            </a>
+
+            <a href="payslip.html" class="nav-item">
+
+                <span class="nav-icon">₹</span>
+
+                <span>My Payslip</span>
+
+            </a>
+
+            <a href="leave.html" class="nav-item">
+
+                <span class="nav-icon">▣</span>
+
+                <span>Leave</span>
+
+            </a>
+
+            <a href="performance.html" class="nav-item">
+
+                <span class="nav-icon">★</span>
+
+                <span>My Performance</span>
+
+            </a>
+
+            <a href="skills.html" class="nav-item">
+
+                <span class="nav-icon">◆</span>
+
+                <span>My Skills</span>
+
+            </a>
+
+            <a href="announcements.html" class="nav-item">
+
+                <span class="nav-icon">📢</span>
+
+                <span>Announcements</span>
+
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button class="logout-button" onclick="logout()">
+                <span>↪</span>
+                Logout
+            </button>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="top-header">
+
+            <div>
+                <p class="welcome-small">Welcome back,</p>
+                <h1 id="employeeName">Employee</h1>
+            </div>
+
+            <div class="profile-area">
+                <div class="profile-avatar" id="profileAvatar">E</div>
+
+                <div>
+                    <strong id="headerName">Employee</strong>
+                    <p>Employee</p>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+        <section class="content">
+
+            <!-- WELCOME CARD -->
+            <div class="welcome-card">
+
+                <div>
+                    <span class="welcome-label">EMPLOYEE PORTAL</span>
+
+                    <h2 id="welcomeMessage">
+                        Welcome to your dashboard!
+                    </h2>
+
+                    <p>
+                        Manage your profile, attendance, payslips and leave
+                        requests from one place.
+                    </p>
+                </div>
+
+                <div class="welcome-icon">
+                    👋
+                </div>
+
+            </div>
+
+
+            <!-- SUMMARY CARDS -->
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon attendance-icon">
+                        📅
+                    </div>
+
+                    <div>
+                        <p>Attendance</p>
+                        <h3 id="attendanceCount">0</h3>
+                        <span>Records</span>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon leave-icon">
+                        ▣
+                    </div>
+
+                    <div>
+                        <p>Leave Requests</p>
+                        <h3 id="leaveCount">0</h3>
+                        <span>Requests</span>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon salary-icon">
+                        ₹
+                    </div>
+
+                    <div>
+                        <p>Latest Salary</p>
+                        <h3 id="salaryAmount">₹0</h3>
+                        <span>Net Salary</span>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon profile-icon">
+                        👤
+                    </div>
+
+                    <div>
+                        <p>Account</p>
+                        <h3>Active</h3>
+                        <span>Account Status</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK ACTIONS -->
+            <div class="section-header">
+                <div>
+                    <h2>Quick Actions</h2>
+                    <p>Access your frequently used features.</p>
+                </div>
+            </div>
+
+
+            <div class="quick-actions">
+
+                <div class="action-card"
+                     onclick="window.location.href='profile.html'">
+
+                    <div class="action-icon">👤</div>
+
+                    <h3>My Profile</h3>
+
+                    <p>
+                        View and update your personal information.
+                    </p>
+
+                    <span class="action-link">
+                        View Profile →
+                    </span>
+
+                </div>
+
+
+                <div class="action-card"
+                     onclick="window.location.href='attendance.html'">
+
+                    <div class="action-icon">📅</div>
+
+                    <h3>Attendance</h3>
+
+                    <p>
+                        Check your attendance records.
+                    </p>
+
+                    <span class="action-link">
+                        View Attendance →
+                    </span>
+
+                </div>
+
+
+                <div class="action-card"
+                     onclick="window.location.href='payslip.html'">
+
+                    <div class="action-icon">₹</div>
+
+                    <h3>My Payslip</h3>
+
+                    <p>
+                        View your salary and payslip details.
+                    </p>
+
+                    <span class="action-link">
+                        View Payslip →
+                    </span>
+
+                </div>
+
+
+                <div class="action-card"
+                     onclick="window.location.href='leave.html'">
+
+                    <div class="action-icon">▣</div>
+
+                    <h3>Leave</h3>
+
+                    <p>
+                        Apply for leave and check request status.
+                    </p>
+
+                    <span class="action-link">
+                        Manage Leave →
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACCOUNT INFORMATION -->
+            <div class="section-header account-heading">
+                <div>
+                    <h2>My Account</h2>
+                    <p>Your registered account information.</p>
+                </div>
+            </div>
+
+
+            <div class="account-card">
+
+                <div class="account-row">
+                    <span>Name</span>
+                    <strong id="accountName">-</strong>
+                </div>
+
+                <div class="account-row">
+                    <span>Email</span>
+                    <strong id="accountEmail">-</strong>
+                </div>
+
+                <div class="account-row">
+                    <span>Role</span>
+                    <strong id="accountRole">Employee</strong>
+                </div>
+
+                <div class="account-row">
+                    <span>Status</span>
+                    <span class="status-badge">Active</span>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="user-dashboard.js"></script>
+
+</body>
+</html>
